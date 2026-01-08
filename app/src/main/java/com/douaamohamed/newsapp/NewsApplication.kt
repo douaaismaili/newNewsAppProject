@@ -14,7 +14,6 @@ import com.douaamohamed.newsapp.worker.NewsWorker
 import dagger.hilt.android.HiltAndroidApp
 import java.util.concurrent.TimeUnit
 import javax.inject.Inject
-import kotlin.jvm.java
 
 @HiltAndroidApp
 class NewsApplication : Application(), Configuration.Provider {

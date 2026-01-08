@@ -6,95 +6,97 @@ import com.douaamohamed.newsapp.data.model.Language
 
 object Const {
 
-    const val SEARCH_NEWS_TIME_DELAY = 500L
-    const val DEFAULT_QUERY_PAGE_SIZE = 20
-    const val DEFAULT_PAGE_NUM = 1
-    const val DEFAULT_COUNTRY = "in"
-    const val DEFAULT_LANGUAGE = "en"
-    const val DEFAULT_SOURCE = "abc-news"
+    const val SEARCH_NEWS_TIME_DELAY = 500L           // Délai de recherche (ms)
+    const val DEFAULT_QUERY_PAGE_SIZE = 20            // Nombre d'articles par page
+    const val DEFAULT_PAGE_NUM = 1                    // Page de départ
+    const val DEFAULT_COUNTRY = "fr"                  // France par défaut
+    const val DEFAULT_LANGUAGE = "fr"                 // Français par défaut
+    const val DEFAULT_SOURCE = "le-monde"             // Source française par défaut (exemple)
     const val API_KEY = BuildConfig.API_KEY
     const val BASE_URL = "https://newsapi.org/v2/"
     const val DB_NAME = "article_db"
 
-    //WorkManager and Notification
+    // WorkManager et Notifications
     const val UNIQUE_WORK_NAME = "newsAppPeriodicWork"
-    const val MORNING_UPDATE_TIME = 5
+    const val MORNING_UPDATE_TIME = 8                 // Mise à jour matinale à 8h
     const val NOTIFICATION_ID = 1
     const val NOTIFICATION_CHANNEL_ID = "news_channel"
-    const val NOTIFICATION_CHANNEL_NAME = "News"
-    const val NOTIFICATION_CONTENT_TITLE = "News"
-    const val NOTIFICATION_CONTENT_TEXT = "Check out the latest news ..."
+    const val NOTIFICATION_CHANNEL_NAME = "Actualités"
+    const val NOTIFICATION_CONTENT_TITLE = "Nouvelles actualités"
+    const val NOTIFICATION_CONTENT_TEXT = "Découvrez les dernières nouvelles..."
 
-
+    // Liste des pays (triée alphabétiquement en français)
     val countryList: List<Country> = listOf(
-        Country("United Arab Emirates", "ae"),
-        Country("Argentina", "ar"),
-        Country("Austria", "at"),
-        Country("Australia", "au"),
-        Country("Belgium", "be"),
-        Country("Bulgaria", "bg"),
-        Country("Brazil", "br"),
+        Country("Afrique du Sud", "za"),
+        Country("Allemagne", "de"),
+        Country("Arabie saoudite", "sa"),
+        Country("Argentine", "ar"),
+        Country("Australie", "au"),
+        Country("Autriche", "at"),
+        Country("Belgique", "be"),
+        Country("Brésil", "br"),
+        Country("Bulgarie", "bg"),
         Country("Canada", "ca"),
-        Country("Switzerland", "ch"),
-        Country("China", "cn"),
-        Country("Colombia", "co"),
+        Country("Chine", "cn"),
+        Country("Colombie", "co"),
+        Country("Corée du Sud", "kr"),
         Country("Cuba", "cu"),
-        Country("Czech Republic", "cz"),
-        Country("Germany", "de"),
-        Country("Egypt", "eg"),
+        Country("Égypte", "eg"),
+        Country("Émirats arabes unis", "ae"),
+        Country("Espagne", "es"),
+        Country("États-Unis", "us"),
         Country("France", "fr"),
-        Country("United Kingdom", "gb"),
-        Country("Greece", "gr"),
+        Country("Grèce", "gr"),
         Country("Hong Kong", "hk"),
-        Country("Hungary", "hu"),
-        Country("Indonesia", "id"),
-        Country("Ireland", "ie"),
-        Country("Israel", "il"),
-        Country("India", "in"),
-        Country("Italy", "it"),
-        Country("Japan", "jp"),
-        Country("South Korea", "kr"),
-        Country("Lithuania", "lt"),
-        Country("Latvia", "lv"),
-        Country("Morocco", "ma"),
-        Country("Mexico", "mx"),
-        Country("Malaysia", "my"),
+        Country("Hongrie", "hu"),
+        Country("Inde", "in"),
+        Country("Indonésie", "id"),
+        Country("Irlande", "ie"),
+        Country("Israël", "il"),
+        Country("Italie", "it"),
+        Country("Japon", "jp"),
+        Country("Lettonie", "lv"),
+        Country("Lituanie", "lt"),
+        Country("Malaisie", "my"),
+        Country("Maroc", "ma"),
+        Country("Mexique", "mx"),
         Country("Nigeria", "ng"),
-        Country("Netherlands", "nl"),
-        Country("Norway", "no"),
-        Country("New Zealand", "nz"),
+        Country("Norvège", "no"),
+        Country("Nouvelle-Zélande", "nz"),
+        Country("Pays-Bas", "nl"),
         Country("Philippines", "ph"),
-        Country("Poland", "pl"),
+        Country("Pologne", "pl"),
         Country("Portugal", "pt"),
-        Country("Romania", "ro"),
-        Country("Serbia", "rs"),
-        Country("Russia", "ru"),
-        Country("Saudi Arabia", "sa"),
-        Country("Sweden", "se"),
-        Country("Singapore", "sg"),
-        Country("Slovakia", "sk"),
-        Country("Thailand", "th"),
-        Country("Turkey", "tr"),
-        Country("Taiwan", "tw"),
+        Country("République tchèque", "cz"),
+        Country("Roumanie", "ro"),
+        Country("Royaume-Uni", "gb"),
+        Country("Russie", "ru"),
+        Country("Serbie", "rs"),
+        Country("Singapour", "sg"),
+        Country("Slovaquie", "sk"),
+        Country("Suède", "se"),
+        Country("Suisse", "ch"),
+        Country("Taïwan", "tw"),
+        Country("Thaïlande", "th"),
+        Country("Turquie", "tr"),
         Country("Ukraine", "ua"),
-        Country("United States", "us"),
-        Country("Venezuela", "ve"),
-        Country("South Africa", "za")
-    )
-    val languageList = listOf(
-        Language("Arabic", "ar"),
-        Language("German", "de"),
-        Language("English", "en"),
-        Language("Spanish", "es"),
-        Language("French", "fr"),
-        Language("Hebrew", "he"),
-        Language("Italian", "it"),
-        Language("Dutch", "nl"),
-        Language("Norwegian", "no"),
-        Language("Portuguese", "pt"),
-        Language("Russian", "ru"),
-        Language("Swedish", "sv"),
-        Language("Chinese", "zh")
+        Country("Venezuela", "ve")
     )
 
+    // Liste des langues (triée alphabétiquement)
+    val languageList = listOf(
+        Language("Allemand", "de"),
+        Language("Anglais", "en"),
+        Language("Arabe", "ar"),
+        Language("Chinois", "zh"),
+        Language("Espagnol", "es"),
+        Language("Français", "fr"),
+        Language("Hébreu", "he"),
+        Language("Italien", "it"),
+        Language("Néerlandais", "nl"),
+        Language("Norvégien", "no"),
+        Language("Portugais", "pt"),
+        Language("Russe", "ru"),
+        Language("Suédois", "sv")
+    )
 }
