@@ -117,7 +117,7 @@ private fun NewsNavHost(
 ) {
     NavHost(
         navController = navController,
-        startDestination = Route.TopNews.route,
+        startDestination = Route.SearchNews.route,
         modifier = modifier
     ) {
         composable(
