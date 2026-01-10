@@ -17,9 +17,11 @@ import androidx.compose.material3.TopAppBarDefaults
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.getValue
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.res.stringResource
+import androidx.compose.ui.text.font.FontWeight
 import androidx.navigation.NavHostController
 import androidx.navigation.NavType
 import androidx.navigation.compose.NavHost
@@ -92,18 +94,25 @@ fun NewsNavHost() {
 @Composable
 fun NewsTopBar(onBackClicked: () -> Unit) {
     TopAppBar(
-        colors = TopAppBarDefaults.topAppBarColors(
-            containerColor = MaterialTheme.colorScheme.primaryContainer,
-            titleContentColor = MaterialTheme.colorScheme.primary,
-        ),
         title = {
-            Text(stringResource(id = R.string.app_name))
+            Text(
+                text = stringResource(id = R.string.app_name),
+                color = Color.White,
+                style = MaterialTheme.typography.titleLarge.copy(fontWeight = FontWeight.Bold)
+            )
         },
+        colors = TopAppBarDefaults.topAppBarColors(
+            containerColor = Color(0xFFD32F2F),
+            titleContentColor = Color.White,
+            navigationIconContentColor = Color.White,
+            actionIconContentColor = Color.White
+        ),
         navigationIcon = {
-            IconButton(onClick = { onBackClicked() }) {
+            IconButton(onClick = onBackClicked) {
                 Icon(
                     imageVector = Icons.Filled.ArrowBack,
-                    contentDescription = null
+                    contentDescription = "Retour",
+                    tint = Color.White
                 )
             }
         }

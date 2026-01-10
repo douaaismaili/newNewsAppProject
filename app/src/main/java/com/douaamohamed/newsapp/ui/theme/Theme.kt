@@ -29,17 +29,17 @@ private val RedBlackColorScheme = darkColorScheme(
 
 @Composable
 fun NewsAppTheme(
-    darkTheme: Boolean = true,  // On force le dark mode pour un look rouge/noir intense
-    dynamicColor: Boolean = false,  // On désactive complètement le dynamic color (source du violet !)
+    darkTheme: Boolean = true,
+    dynamicColor: Boolean = false,
     content: @Composable () -> Unit
 ) {
-    val colorScheme = RedBlackColorScheme  // On utilise toujours notre thème personnalisé
+    val colorScheme = RedBlackColorScheme
 
     val view = LocalView.current
     if (!view.isInEditMode) {
         SideEffect {
             val window = (view.context as? Activity)?.window
-            window?.statusBarColor = colorScheme.primary.toArgb()
+            window?.statusBarColor = RedPrimary.toArgb()  // ← Force la barre de statut en rouge
             window?.let {
                 WindowCompat.getInsetsController(it, view).isAppearanceLightStatusBars = false
             }
