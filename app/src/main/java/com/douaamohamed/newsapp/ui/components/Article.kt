@@ -22,8 +22,12 @@ import coil.compose.AsyncImage
 import com.douaamohamed.newsapp.data.database.entity.Article
 
 @Composable
-fun Article(article: Article, onItemClick: (Article) -> Unit) {
-    Card(modifier = Modifier
+fun Article(
+    article: Article, 
+    onItemClick: (Article) -> Unit,
+    modifier: Modifier = Modifier
+) {
+    Card(modifier = modifier
         .fillMaxWidth()
         .wrapContentHeight()
         .padding(4.dp)

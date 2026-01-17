@@ -166,9 +166,12 @@ private fun NewsPagingAppend(
     LazyColumn {
         items(pagingResponse.itemCount) {
             if (pagingResponse[it] != null) {
-                Article(pagingResponse[it]!!) { article ->
-                    newsClicked(article)
-                }
+                Article(
+                    article = pagingResponse[it]!!,
+                    onItemClick = { article ->
+                        newsClicked(article)
+                    }
+                )
             }
         }
         pagingResponse.apply {
