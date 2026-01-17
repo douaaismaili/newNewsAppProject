@@ -93,6 +93,8 @@ class NewsRepository @Inject constructor(
 
     suspend fun deleteArticle(article: Article) = database.deleteArticle(article)
 
+    suspend fun isArticleSaved(url: String): Boolean = database.isArticleSaved(url)
+
     suspend fun getSources(): Flow<List<Source>> = flow {
         emit(
             network.getSources().sources.apiSourceListToSourceList()

@@ -34,6 +34,10 @@ class AppDatabaseService(
         articleDatabase.getSavedArticleDao().deleteArticle(article.articleToSavedArticleEntity())
     }
 
+    override suspend fun isArticleSaved(url: String): Boolean {
+        return articleDatabase.getSavedArticleDao().isArticleSaved(url)
+    }
+
     override fun getAllArticles(): Flow<List<Article>> {
         return articleDatabase.getArticleDao().getAllArticles()
     }

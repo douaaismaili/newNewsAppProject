@@ -20,4 +20,7 @@ interface SavedArticleDao {
     @Delete
     suspend fun deleteArticle(article: SavedArticleEntity)
 
+    @Query("SELECT EXISTS(SELECT 1 FROM saved_articles WHERE url = :url)")
+    suspend fun isArticleSaved(url: String): Boolean
+
 }

@@ -6,6 +6,12 @@ import androidx.compose.material3.FloatingActionButton
 import androidx.compose.material3.Icon
 import androidx.compose.material3.Scaffold
 import androidx.compose.runtime.Composable
+import androidx.compose.runtime.LaunchedEffect
+import androidx.compose.runtime.getValue
+import androidx.compose.runtime.mutableStateOf
+import androidx.compose.runtime.remember
+import androidx.compose.runtime.rememberCoroutineScope
+import androidx.compose.runtime.setValue
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.res.painterResource
@@ -16,6 +22,7 @@ import com.douaamohamed.newsapp.data.database.entity.Article
 import com.douaamohamed.newsapp.ui.base.ShowError
 import com.douaamohamed.newsapp.ui.base.WebViewPage
 import com.douaamohamed.newsapp.ui.viewmodels.SharedViewModel
+import kotlinx.coroutines.launch
 
 @Composable
 fun ArticleScreen(
@@ -23,21 +30,46 @@ fun ArticleScreen(
     sharedViewModel: SharedViewModel = hiltViewModel()
 ) {
     val mContext = LocalContext.current
+    val coroutineScope = rememberCoroutineScope()
+    var isSaved by remember { mutableStateOf(false) }
+
+    LaunchedEffect(article?.url) {
+        if (article?.url != null) {
+            isSaved = sharedViewModel.isArticleSaved(article.url)
+        }
+    }
 
     Scaffold(
         floatingActionButton = {
-
             FloatingActionButton(onClick = {
                 if (article != null) {
-                    sharedViewModel.saveArticle(article)
+                    coroutineScope.launch {
+                        if (isSaved) {
+                            sharedViewModel.deleteArticle(article)
+                            isSaved = false
+                            Toast.makeText(
+                                mContext,
+                                mContext.resources.getString(R.string.article_removed_from_favorites),
+                                Toast.LENGTH_SHORT
+                            ).show()
+                        } else {
+                            sharedViewModel.saveArticle(article)
+                            isSaved = true
+                            Toast.makeText(
+                                mContext,
+                                mContext.resources.getString(R.string.article_saved_successfully),
+                                Toast.LENGTH_SHORT
+                            ).show()
+                        }
+                    }
                 }
-                Toast.makeText(
-                    mContext,
-                    mContext.resources.getString(R.string.article_saved_successfully),
-                    Toast.LENGTH_SHORT
-                ).show()
             }) {
-                Icon(painter = painterResource(id = R.drawable.ic_save), contentDescription = null)
+                Icon(
+                    painter = painterResource(
+                        id = if (isSaved) R.drawable.ic_favourite_filled else R.drawable.ic_save
+                    ),
+                    contentDescription = null
+                )
             }
         }
     ) {

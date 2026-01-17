@@ -12,6 +12,7 @@
     <string name="successfully_deleted_article">Article supprimé avec succès</string>
     <string name="undo">Annuler</string>
     <string name="article_saved_successfully">Article sauvegardé avec succès</string>
+    <string name="article_removed_from_favorites">Article retiré des favoris</string>
     <string name="loading">Chargement…</string>
     <string name="news">Actualités</string>
     <string name="filter">Filtrer</string>

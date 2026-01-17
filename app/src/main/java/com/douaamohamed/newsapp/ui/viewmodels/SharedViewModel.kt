@@ -25,5 +25,9 @@ class SharedViewModel @Inject constructor(
 
     fun getSavedNews() = newsRepository.getSavedNews()
 
+    suspend fun isArticleSaved(url: String): Boolean {
+        return newsRepository.isArticleSaved(url)
+    }
+
 }
 

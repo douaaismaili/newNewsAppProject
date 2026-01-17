@@ -8,6 +8,7 @@ interface DatabaseService {
     suspend fun upsert(article: Article)
     fun getSavedArticles(): Flow<List<Article>>
     suspend fun deleteArticle(article: Article)
+    suspend fun isArticleSaved(url: String): Boolean
 
     //Caching News
     fun getAllArticles(): Flow<List<Article>>
