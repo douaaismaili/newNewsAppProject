@@ -21,3 +21,4 @@ Notre application Android permettant de consulter des articles de presse récent
 - Lecture complète des articles via WebView  
 - Sauvegarde d’articles en favoris  
 - Suppression d’articles des favoris    
+- Partager des articles
