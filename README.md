@@ -64,7 +64,7 @@ Deux approches de navigation :
 
 ## 📸 Démonstration
 
-*(https://drive.google.com/drive/folders/1Sr321YFnaa6-4K8tJ2lLv8U547zrn4_N)*
+*https://drive.google.com/drive/folders/1Sr321YFnaa6-4K8tJ2lLv8U547zrn4_N*
 
 - Écran d'accueil avec liste d'articles
 - Écran recherche avec filtres
@@ -76,4 +76,4 @@ Deux approches de navigation :
 
 1. Cloner le repo :
    ```bash
-   git clone https://github.com/amranilara/newNewsAppProject.git
+   git clone https://github.com/douaaismaili/newNewsAppProject.git
