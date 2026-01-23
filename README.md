@@ -17,7 +17,7 @@ L'application existe en **deux versions** :
 - Version **Views/XML** (RecyclerView + Fragments)
 - Version **Jetpack Compose** (moderne et fluide)
 
-Thème personnalisé **rouge/noir** sombre avec titre blanc, interface 100 % en français.
+Thème personnalisé **rouge/noir** sombre avec titre blanc.
 
 ## 🛠 Technologies utilisées
 
@@ -36,7 +36,7 @@ Thème personnalisé **rouge/noir** sombre avec titre blanc, interface 100 % en 
 - **WebView** : AndroidView + WebViewClient (lecture complète des articles)
 - **Partage** : Intent.ACTION_SEND
 - **Thème** : Material3 personnalisé (rouge/noir, dark mode forcé)
-- **Localisation** : strings.xml (100 % français)
+- **Localisation** : strings.xml
 
 ## ✨ Fonctionnalités principales
 
