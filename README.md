@@ -62,7 +62,7 @@ Deux approches de navigation :
 - Navigation Compose (NavHost, routes, arguments)
 - Navigation XML/Fragment (version Views)
 
-## 📸 Captures d'écran
+## 📸 Démonstration
 
 *(Ajoute tes captures ici)*
 
